@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Student Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2 id="schoolName">Your School Name</h2>
+    <ul>
+      <li onclick="showSection('personal')">Personal Details</li>
+      <li onclick="showSection('identification')">Student Identification</li>
+      <li onclick="showSection('academic')">Academic Details</li>
+      <li onclick="showSection('attendance')">Attendance</li>
+      <li onclick="showSection('fee')">Fee Details</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>School Student Management System</h1>
+
+    <!-- Search -->
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search by Name / Roll / Class">
+      <button onclick="searchStudent()">Search</button>
+    </div>
+
+    <!-- Student Form -->
+    <form id="studentForm">
+      <!-- Personal Details -->
+      <div class="form-section" id="personal">
+        <h3>Personal Details</h3>
+        <input type="text" id="firstName" placeholder="First Name (required)">
+        <input type="text" id="middleName" placeholder="Middle Name">
+        <input type="text" id="lastName" placeholder="Last Name">
+        <input type="text" id="fatherName" placeholder="Father Name">
+        <input type="text" id="fatherOccupation" placeholder="Father Occupation (optional)">
+        <input type="text" id="motherName" placeholder="Mother Name">
+        <input type="text" id="motherOccupation" placeholder="Mother Occupation (optional)">
+        <input type="date" id="dob" placeholder="Date of Birth">
+        <select id="gender">
+          <option value="">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+        <input type="text" id="bloodGroup" placeholder="Blood Group (optional)">
+        <select id="religion">
+          <option value="">Select Religion</option>
+          <option value="Hindu">Hindu</option>
+          <option value="Muslim">Muslim</option>
+          <option value="Christian">Christian</option>
+          <option value="Sikh">Sikh</option>
+          <option value="Buddhist">Buddhist</option>
+          <option value="Jain">Jain</option>
+        </select>
+        <input type="text" id="caste" placeholder="Caste">
+        <input type="text" id="nationality" value="India" readonly>
+        <input type="text" id="contact" placeholder="Father Mobile Number">
+        <input type="email" id="email" placeholder="Email (optional)">
+        <input type="checkbox" id="sameWhatsapp"> WhatsApp same as Father
+        <input type="text" id="whatsapp" placeholder="WhatsApp Number">
+        <input type="checkbox" id="sameEmergency"> Emergency same as Father
+        <input type="text" id="emergency" placeholder="Emergency Number">
+      </div>
+
+      <!-- Student Identification -->
+      <div class="form-section" id="identification">
+        <h3>Student Identification</h3>
+        <input type="text" id="studentID" placeholder="Student ID (admin enter)">
+        <input type="file" id="profilePhoto" accept="image/*">
+        <input type="text" id="idCardNumber" placeholder="ID Card Number (auto)">
+      </div>
+
+      <!-- Academic Details -->
+      <div class="form-section" id="academic">
+        <h3>Academic Details</h3>
+        <select id="classSelect">
+          <option value="">Select Class</option>
+          <option value="Nursery">Nursery</option>
+          <option value="KG">KG</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        <input type="text" id="rollNumber" placeholder="Roll Number (auto)">
+        <input type="text" id="academicYear" placeholder="Academic Year">
+      </div>
+
+      <!-- Attendance -->
+      <div class="form-section" id="attendance">
+        <h3>Attendance</h3>
+        <input type="text" id="attendancePercent" placeholder="Attendance %">
+      </div>
+
+      <!-- Fee Details -->
+      <div class="form-section" id="fee">
+        <h3>Fee Details</h3>
+        <input type="text" id="feePaid" placeholder="Fee Paid">
+        <input type="text" id="feePending" placeholder="Fee Pending">
+      </div>
+
+      <button type="submit">Add Student</button>
+    </form>
+
+    <!-- Student Table -->
+    <table id="studentTable">
+      <thead>
+        <tr>
+          <th>ID Card No</th>
+          <th>Name</th>
+          <th>Roll</th>
+          <th>Class</th>
+          <th>Attendance</th>
+          <th>Fee Paid</th>
+          <th>Fee Pending</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
